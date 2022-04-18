@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('scan') {
       steps {
-        sh "docker run -v ${WORKSPACE}:/src --workdir /src returntocorp/semgrep-agent:v1 semgrep-agent --config 'p/secrets' --config 'p/security-audit'"
+        sh "docker run -v ${WORKSPACE}:/src --workdir /src returntocorp/semgrep-agent:v1 semgrep-agent --config 'p/secrets' --config 's/vicradon:find-all-print-statements'"
       }
     }
   }
